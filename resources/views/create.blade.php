@@ -1,13 +1,14 @@
 @extends('welcome')
 @php 
 $routeCurrent = explode('.',Route::current()->getName());
+print_r($routeCurrent); exit;
 $route = (count($routeCurrent) > 0) ? $routeCurrent[0] : '';
 $routeCapital = ucwords($route);
 $page_title = (count($routeCurrent) > 0) ? ucwords($routeCurrent[0].' '.$route) : '';
 @endphp
 
 @section('content')
-<div class="page-header mt-0 shadow p-3">
+<div class="page-header">
     {{$route}}
 </div>
 <form action="/action_page.php">

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::group(['prifix' => '/'], function(){
+    // Route::get('/','CrudController@index')->name('list');
+});
+Route::get('/list', function () {
     return view('create');
 });
